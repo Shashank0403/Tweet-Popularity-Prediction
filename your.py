@@ -82,7 +82,7 @@ def delete_post(username, content, index):
 
 def app():
     if 'username' not in st.session_state or st.session_state.username == '':
-        st.markdown("<h3 style='font-size:70px;'><b>Please Login first</b></h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='font-size:70px; color:black; font-weight:bold;'><b>Please Login first</b></h3>", unsafe_allow_html=True)
         return
 
     try:
