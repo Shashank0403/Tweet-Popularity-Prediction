@@ -82,16 +82,15 @@ def delete_post(username, content, index):
 
 def app():
     if 'username' not in st.session_state or st.session_state.username == '':
-        st.markdown("<h3 style='font-size:90px; color:black; font-weight:bold;'><b>Please Login first</b></h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='font-size:70px;'><b>Please Login first</b></h3>", unsafe_allow_html=True)
         return
-        
 
     try:
         st.title('User: '+st.session_state['username'])
     except:
         st.text('An error occurred while fetching posts.')
 
-    st.title("Tweet Likes Predictor")
+    st.title(":purple[Tweet Likes Predictor]")
     tweet_text = st.text_input("Enter your tweet:")
     if st.button("Predict Likes"):
         if not tweet_text:  # Check if the input is empty
@@ -101,12 +100,14 @@ def app():
             st.success(f"Total likes for matched tweets: {total_likes}")
             if tweets_info:
                 for tweet_info in tweets_info:
-                    st.write(f"Likes: {tweet_info['likes']}")
-                    st.write(f"Info: {tweet_info['info']}")
+                    st.write(f"<span style='font-weight:bold; font-size:14px; color:black;'>Likes:</span> <span style='font-weight:bold; font-size:14px; color:black;'>{tweet_info['likes']}</span>", unsafe_allow_html=True)
+                    st.write(f"<span style='font-weight:bold; font-size:14px; color:black;'>Info:</span> <span style='font-weight:bold; font-size:14px; color:black;'>{tweet_info['info']}</span>", unsafe_allow_html=True)
+                    
                     try:
                         st.image(tweet_info['image'], caption=tweet_info['text'], use_column_width=True)
                     except Exception as e:
                         st.error(f"An error occurred when displaying the image: {e}")
+
             else:
                 st.info("No matching tweets found.")
 
