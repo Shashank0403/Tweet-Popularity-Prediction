@@ -11,7 +11,7 @@ firebase_admin.initialize_app(cred)
 
 
 def app():
-    st.title('Welcome to :violet[TwitPredict] :sunglasses:')
+    st.title(':black[Welcome to] :violet[TwitPredict] :sunglasses:')
 
     if 'username' not in st.session_state:
         st.session_state.username = ''
