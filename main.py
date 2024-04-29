@@ -14,7 +14,6 @@ page_bg_img = f"""
 [data-testid="stAppViewContainer"] > .main {{
     background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0-1) to control transparency */
     background-image: url("https://www.lifewire.com/thmb/55VlqROrh1QVHVbPhvDuSS7nHJw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Twitter-and-X-4c4103f6bc3c42e0b7197b60a50317ca.jpg");
-    background-blend-mode: overlay; /* Blend the background image with the background color */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
